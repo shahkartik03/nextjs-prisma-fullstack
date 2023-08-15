@@ -7,13 +7,6 @@ async function fetchBlogs() {
   return data.posts;
 }
 
-// async function fetchMovies() {
-//   const resp = await fetch("http://localhost:3000/api/mflix");
-//   const data = await resp.json();
-//   console.log('data ', data);
-//   return data.movies;
-// }
-
 export default async function Home() {
   const posts = await fetchBlogs();
   // console.log('posts ', posts);
