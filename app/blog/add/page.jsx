@@ -2,13 +2,8 @@
 
 import { Fragment, useEffect, useRef } from "react";
 import toast, { Toaster } from "react-hot-toast";
-import { data } from "../../MOCK_data.js";
 
 export default function AddBlog() {
-    useEffect(() => {
-        data.map(async (post) => 
-            await saveNewBlog({ title: post.title, description: post.description }))
-    }, []);
     
     const titleRef = useRef();
     const descriptionRef = useRef();
