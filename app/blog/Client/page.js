@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 
-const client = () => {
+const Client = () => {
     const [posts, setPosts] = useState([]);
     useEffect(async () => {
         const resp = await fetch("http://localhost:3000/api/blog", { cache: 'no-store' });
@@ -19,7 +19,7 @@ const client = () => {
             <div className="flex flex-col">
                 {
                 posts?.map((post, index) => (
-                    <div className="bg-white m-4 flex p-2 rounded">
+                    <div key={index} className="bg-white m-4 flex p-2 rounded">
                     <div className="flex flex-col grow">
                         <p className="text-xl">{`${index}. ${post.title}`}</p>
                         <p>{post.description}</p>
@@ -33,4 +33,4 @@ const client = () => {
     )
 }
 
-export default client;
+export default Client;

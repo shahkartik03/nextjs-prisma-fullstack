@@ -26,7 +26,7 @@ export default async function Home() {
       <div className="flex flex-col">
         {
           posts?.map((post, index) => (
-            <div className="bg-white m-4 flex p-2 rounded">
+            <div key={index} className="bg-white m-4 flex p-2 rounded">
               <div className="flex flex-col grow">
                 <p className="text-xl">{`${index}. ${post.title}`}</p>
                 <p>{post.description}</p>
